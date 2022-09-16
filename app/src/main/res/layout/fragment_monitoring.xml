@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:animateLayoutChanges="true"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_refresh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:animateLayoutChanges="true"
+        android:layout_marginEnd="@dimen/gapMedium"
+        android:layout_marginTop="@dimen/gapLarge">
+
+        <TextView
+            android:id="@+id/tv_last_update"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="?attr/text_extra_color"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Update" />
+
+        <ImageView
+            android:id="@+id/img_refresh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            app:layout_constraintStart_toEndOf="@id/tv_last_update"
+            app:layout_constraintTop_toTopOf="@id/tv_last_update"
+            app:layout_constraintBottom_toBottomOf="@id/tv_last_update"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:tint="?attr/text_extra_color"
+            android:layout_marginStart="@dimen/gapSmall"
+            android:src="@drawable/ic_refresh"/>
+
+        <ProgressBar
+            android:layout_width="22dp"
+            android:id="@+id/progress_bar"
+            app:layout_constraintStart_toStartOf="@id/img_refresh"
+            app:layout_constraintEnd_toEndOf="@id/img_refresh"
+            android:visibility="invisible"
+            app:layout_constraintBaseline_toTopOf="@id/img_refresh"
+            app:layout_constraintBottom_toBottomOf="@id/img_refresh"
+            android:layout_height="22dp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/gapHalfLarge"
+        android:id="@+id/layout_monitororing_info"
+        android:visibility="gone"
+        tools:visibility="visible"
+        app:layout_constraintTop_toBottomOf="@id/layout_refresh"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <TextView
+            android:id="@+id/tv_speed_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/gapMedium"
+            android:text="@string/speed"
+            android:textColor="?attr/text_extra_color"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_goneMarginTop="@dimen/gapMedium" />
+
+        <TextView
+            android:id="@+id/tv_speed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/gapLarge"
+            android:textSize="16sp"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_speed_title"
+            app:layout_constraintStart_toEndOf="@id/tv_speed_title"
+            app:layout_goneMarginTop="@dimen/gapMedium" />
+
+        <TextView
+            android:id="@+id/tv_voltage_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/gapMedium"
+            android:text="@string/voltage"
+            android:textColor="?attr/text_extra_color"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="@id/tv_speed_title"
+            app:layout_constraintTop_toBottomOf="@id/tv_speed_title"
+            app:layout_goneMarginTop="@dimen/gapMedium" />
+
+        <TextView
+            android:id="@+id/tv_voltage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_voltage_title"
+            app:layout_constraintStart_toStartOf="@id/tv_speed"
+            app:layout_goneMarginTop="@dimen/gapMedium" />
+
+        <fragment
+            android:id="@+id/map_fragment"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/gapHalfLarge"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_voltage_title" />
+
+        <org.osmdroid.views.MapView
+            android:id="@+id/map"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/gapHalfLarge"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_voltage_title" />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/tv_error"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        tools:visibility="visible"
+        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="@dimen/gapLarge"
+        android:layout_marginStart="@dimen/gapMedium"
+        android:text="@string/not_available_for_this_vehicle"
+        app:layout_goneMarginTop="@dimen/gapMedium" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

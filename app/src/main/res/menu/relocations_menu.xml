@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/mi_relocations"
+        android:icon="@drawable/ic_car_multiple"
+        android:title="@string/relocations"
+        app:showAsAction="always" />
+
+</menu>

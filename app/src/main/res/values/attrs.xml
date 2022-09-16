@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="placeholder_color" format="reference" />
+    <attr name="inactive_button_color" format="reference" />
+    <attr name="button_primary_color" format="reference" />
+    <attr name="button_dark_color" format="reference" />
+    <attr name="text_primary_color" format="reference" />
+    <attr name="text_extra_light_color" format="reference" />
+    <attr name="text_extra_color" format="reference" />
+    <attr name="background_primary_color" format="reference" />
+    <attr name="background_extra_color" format="reference" />
+    <attr name="background_shadow_color" format="reference" />
+    <attr name="background_extra_light_color" format="reference" />
+    <attr name="background_extra_dark_color" format="reference" />
+    <attr name="text_link_color" format="reference" />
+    <attr name="icon_color" format="reference" />
+
+    <declare-styleable name="CircularSeekBar">
+        <attr name="progress" format="integer"/>
+        <attr name="max" format="integer"/>
+        <attr name="move_outside_circle" format="boolean"/>
+        <attr name="maintain_equal_circle" format="boolean"/>
+        <attr name="use_custom_radii" format="boolean"/>
+        <attr name="lock_enabled" format="boolean"/>
+        <attr name="circle_x_radius" format="dimension" />
+        <attr name="circle_y_radius" format="dimension" />
+        <attr name="circle_stroke_width" format="dimension" />
+        <attr name="pointer_radius" format="dimension" />
+        <attr name="pointer_halo_width" format="dimension" />
+        <attr name="pointer_halo_border_width" format="dimension"/>
+        <attr name="circle_color" format="color"/>
+        <attr name="circle_progress_color" format="color"/>
+        <attr name="pointer_color" format="color"/>
+        <attr name="pointer_halo_color" format="color"/>
+        <attr name="pointer_halo_color_ontouch" format="color"/>
+        <attr name="pointer_alpha_ontouch" format="integer"/>
+        <attr name="start_angle" format="float"/>
+        <attr name="end_angle" format="float"/>
+        <attr name="circle_fill" format="color"/>
+    </declare-styleable>
+
+</resources>

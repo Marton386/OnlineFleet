@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/profileFragment"
+        android:icon="@drawable/ic_account"
+        android:title="@string/account" />
+
+    <item
+        android:id="@+id/searchCarFragment"
+        android:icon="@drawable/ic_car"
+        android:title="@string/auto" />
+
+    <item
+        android:id="@+id/qrCodeFragment"
+        android:icon="@drawable/ic_qr_code_scanner"
+        android:title="@string/qr_code" />
+
+    <item
+        android:id="@+id/scheduleFragment"
+        android:icon="@drawable/ic_schedule"
+        android:title="@string/schedule" />
+
+</menu>

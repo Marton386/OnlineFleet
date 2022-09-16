@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_select_equipment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/gapMedium"
+            android:layout_marginTop="@dimen/gapLarge"
+            android:text="@string/select_to_add_equipment"
+            android:textColor="?attr/text_extra_color"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_goneMarginTop="@dimen/gapMedium" />
+
+        <RadioGroup
+            android:id="@+id/rbtn_group_equipment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/gapMedium"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_select_equipment">
+
+            <RadioButton
+                android:id="@+id/rbtn_gps"
+                style="@style/RadioButton"
+                android:text="@string/gps_navigator" />
+
+            <RadioButton
+                android:id="@+id/rbtn_child_seat"
+                style="@style/RadioButton"
+                android:text="@string/child_seat" />
+
+        </RadioGroup>
+
+        <LinearLayout
+            android:id="@+id/layout_add_equipment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/gapMedium"
+            android:animateLayoutChanges="true"
+            android:orientation="vertical"
+            android:visibility="invisible"
+            app:layout_constraintTop_toBottomOf="@id/rbtn_group_equipment"
+            tools:visibility="visible">
+
+            <LinearLayout
+                android:id="@+id/layout_number_equipment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/gapSmall"
+                android:orientation="vertical"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/number_equipment"
+                    android:textColor="?attr/text_extra_color"
+                    android:textSize="14sp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/gapSmall">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_number_equipment"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:maxLines="1"
+                        android:inputType="text"
+                        android:textSize="16sp"
+                        tools:text="number1123" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_add_equipment"
+                style="@style/GreenButtonFullScreen"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginTop="@dimen/gapMedium"
+                android:enabled="false"
+                android:text="@string/add_equipment"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_optional_equipment"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            app:layout_constraintVertical_bias="0"
+            android:layout_marginTop="@dimen/gapXLarge"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@id/btn_next"
+            android:layout_marginBottom="@dimen/gapXLarge"
+            tools:visibility="visible"
+            app:layout_constraintTop_toBottomOf="@id/layout_add_equipment"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_selected_equipment"
+                android:layout_width="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/gapMedium"
+                android:text="@string/selected_optional_equipment"
+                android:textSize="14sp" />
+
+            <LinearLayout
+                android:id="@+id/layout_selected_equipment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/gapMedium"
+                android:animateLayoutChanges="true"
+                android:orientation="vertical" />
+
+            <TextView
+                android:id="@+id/tv_hint_for_delete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/for_remove_tap_on_equipment"
+                android:textColor="?attr/text_extra_color"
+                android:layout_marginStart="@dimen/gapMedium"
+                android:textSize="11sp"
+                android:layout_marginTop="@dimen/gapMedium" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_equipment_not_selected"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/gapMedium"
+            android:layout_marginTop="@dimen/gapLarge"
+            android:layout_marginEnd="@dimen/gapMedium"
+            android:text="@string/optional_equipment_not_selected"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/layout_add_equipment"
+            app:layout_constraintTop_toTopOf="@id/layout_optional_equipment" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_next"
+            style="@style/GreenButtonMargin"
+            android:layout_marginTop="@dimen/gapLarge"
+            android:text="@string/next"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

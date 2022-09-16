@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:fillViewport="true"
+    android:layout_height="400dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+
+        <TextView
+            android:id="@+id/tv_res_number_title"
+            style="@style/EditTextTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/gapMedium"
+            android:layout_marginTop="@dimen/gapLarge"
+            android:text="@string/reservation_number"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_goneMarginTop="@dimen/gapMedium" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layout_reservation_number"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/gapSmall"
+            app:endIconMode="clear_text"
+            android:layout_marginEnd="@dimen/gapHalfMedium"
+            app:helperText="@string/enter_res_number_fully"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/tv_res_number_title"
+            app:layout_constraintTop_toBottomOf="@id/tv_res_number_title"
+            app:layout_goneMarginTop="@dimen/gapMedium">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_reservation_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:textSize="18sp">
+
+                <requestFocus />
+            </com.google.android.material.textfield.TextInputEditText>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/tv_res_no_found"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/reservation_not_found"
+            android:textSize="16sp"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="@+id/tv_res_number_title"
+            app:layout_constraintTop_toTopOf="@id/layout_reservations"
+            tools:visibility="visible" />
+
+        <LinearLayout
+            android:id="@+id/layout_reservations"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/gapXLarge"
+            android:orientation="vertical"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@id/layout_reservation_number"
+            tools:visibility="visible">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/gapMedium"
+                android:text="@string/select_reservation"
+                android:textColor="?attr/text_extra_color"
+                android:textSize="14sp"
+                app:layout_goneMarginTop="@dimen/gapMedium" />
+
+            <LinearLayout
+                android:id="@+id/layout_reservation_items"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/gapMedium"
+                android:orientation="vertical" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_scan_qrcode"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/btn_next"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layout_reservation_number"
+            android:layout_marginTop="@dimen/gapLarge"
+            app:layout_constraintVertical_bias="1"
+            android:layout_marginBottom="@dimen/gapLarge"
+            android:gravity="center_horizontal"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_qr_code_scanner"
+                android:adjustViewBounds="true"
+                app:tint="?attr/text_primary_color"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/gapSmall"
+                android:text="@string/tap_to_scan"
+                android:textColor="?attr/text_extra_color"
+                android:textSize="11sp" />
+
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_next"
+            style="@style/GreenButtonMargin"
+            android:layout_gravity="bottom"
+            android:enabled="false"
+            android:text="@string/next"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</ScrollView>

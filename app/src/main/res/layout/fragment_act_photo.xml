@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <TextView
+        android:id="@+id/tv_take_photo_title"
+        style="@style/EditTextTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/gapLarge"
+        android:text="@string/take_photo_act_of_handover"
+        android:layout_marginStart="@dimen/gapMedium"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_goneMarginTop="@dimen/gapMedium" />
+
+    <LinearLayout
+        android:id="@+id/layout_open_camera"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/gapLarge"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="@id/tv_take_photo_title"
+        app:layout_constraintTop_toBottomOf="@id/tv_take_photo_title">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:src="@drawable/ic_photo_camera"
+            app:tint="?attr/text_primary_color" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/gapSmall"
+            android:text="@string/tap_to_open_camera"
+            android:textSize="12sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_loaded_photo"
+        android:layout_width="wrap_content"
+        android:visibility="gone"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/gapMedium"
+        android:layout_marginTop="100dp"
+        tools:visibility="visible"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layout_open_camera">
+
+        <TextView
+            android:id="@+id/tv_photo_act"
+            style="@style/EditTextTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/loaded_photo" />
+
+        <ImageView
+            android:id="@+id/img_photo_act"
+            tools:background="?attr/background_extra_color"
+            android:layout_width="150dp"
+            android:adjustViewBounds="true"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/gapHalfLarge" />
+
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_next"
+        style="@style/GreenButtonMargin"
+        android:layout_gravity="bottom"
+        android:enabled="false"
+        android:text="@string/next"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

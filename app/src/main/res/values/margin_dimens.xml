@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="gapXSmall">4dp</dimen>
+    <dimen name="gapSmall">8dp</dimen>
+    <dimen name="gapHalfMedium">12dp</dimen>
+    <dimen name="gapMedium">16dp</dimen>
+    <dimen name="gapHalfLarge">24dp</dimen>
+    <dimen name="gapLarge">32dp</dimen>
+    <dimen name="gapHalfXLarge">48dp</dimen>
+    <dimen name="gapXLarge">64dp</dimen>
+</resources>

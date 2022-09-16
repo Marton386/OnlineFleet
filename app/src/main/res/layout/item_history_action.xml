@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <TextView
+        android:id="@+id/tv_date"
+        android:layout_width="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="@dimen/gapMedium"
+        tools:text="11.11.2022 10:12"
+        android:textSize="12sp"
+        android:layout_marginTop="@dimen/gapMedium"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/tv_action"
+        android:layout_width="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/tv_date"
+        tools:text="@string/pick_up"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@+id/tv_date"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:id="@+id/tv_manager_name"
+        tools:text="Alex Smith"
+        android:textColor="?attr/text_extra_color"
+        app:layout_constraintStart_toStartOf="@id/tv_date"
+        app:layout_constraintTop_toBottomOf="@id/tv_action"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="@dimen/gapSmall"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/tv_station_code"
+        android:layout_width="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textStyle="bold"
+        android:layout_marginEnd="@dimen/gapMedium"
+        tools:text="MSK"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:textAllCaps="true"
+        android:textColor="?attr/text_extra_color"
+        android:textSize="18sp"
+        android:layout_height="wrap_content"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

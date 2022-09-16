@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/profileFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="anless.fleetmanagement.user_module.presentation.ui.login.LoginFragment"
+        android:label="@string/app_name"
+        tools:layout="@layout/fragment_login" />
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="anless.fleetmanagement.user_module.presentation.ui.profile.ProfileFragment"
+        android:label="@string/employee"
+        tools:layout="@layout/fragment_profile">
+
+        <action
+            android:id="@+id/action_profileFragment_to_stationFragment"
+            app:destination="@id/stationFragment" />
+
+        <action
+            android:id="@+id/action_profileFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+
+        <action
+            android:id="@+id/action_profileFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+
+        <action
+            android:id="@+id/action_profileFragment_to_relocationsFragment"
+            app:destination="@id/relocationsFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/stationFragment"
+        android:name="anless.fleetmanagement.station_module.presentation.ui.stations.StationFragment"
+        android:label="@string/select_station"
+        tools:layout="@layout/fragment_stations" />
+
+    <fragment
+        android:id="@+id/scheduleFragment"
+        android:name="anless.fleetmanagement.station_module.presentation.ui.schedule.ScheduleFragment"
+        android:label="@string/schedule"
+        tools:layout="@layout/fragment_schedule" />
+
+    <fragment
+        android:id="@+id/relocationsFragment"
+        android:name="anless.fleetmanagement.car_module.presentation.ui.relocations.RelocationsFragment"
+        android:label="@string/relocations"
+        tools:layout="@layout/fragment_relocations">
+
+        <action
+            android:id="@+id/action_relocationsFragment_to_carDetailsFragment"
+            app:destination="@id/carDetailsFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="anless.fleetmanagement.car_module.presentation.ui.settings.SettingsFragment"
+        android:label="SettingsFragment"
+        tools:layout="@layout/fragment_settings" />
+
+    <fragment
+        android:id="@+id/carDetailsFragment"
+        android:name="anless.fleetmanagement.car_module.presentation.ui.car_details.CarDetailsFragment"
+        android:label="@string/car_actions"
+        tools:layout="@layout/fragment_car_details">
+
+        <action
+            android:id="@+id/action_carDetailsFragment_to_monitoringFragment"
+            app:destination="@id/monitoringFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/searchCarFragment"
+        android:name="anless.fleetmanagement.car_module.presentation.ui.search_car.SearchCarFragment"
+        android:label="@string/search_car"
+        tools:layout="@layout/fragment_search_car">
+
+        <action
+            android:id="@+id/action_searchCarFragment_to_carDetailsFragment"
+            app:destination="@id/carDetailsFragment" />
+
+        <action
+            android:id="@+id/action_searchCarFragment_to_relocationsFragment"
+            app:destination="@id/relocationsFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/qrCodeFragment"
+        android:name="anless.fleetmanagement.car_module.presentation.ui.qr.QrFragment"
+        android:label="@string/qr_code_scan"
+        tools:layout="@layout/fragment_qr_code">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/stopDaysFragment"
+        android:name="anless.fleetmanagement.car_module.presentation.ui.stop_days.StopDaysFragment"
+        android:label="@string/start_maintenance"
+        tools:layout="@layout/fragment_stop_days" />
+
+    <fragment
+        android:id="@+id/tireFragment"
+        android:name="anless.fleetmanagement.car_module.presentation.ui.tire_options.TireOptionsFragment"
+        android:label="@string/change_tires"
+        tools:layout="@layout/fragment_tire_options" />
+
+    <fragment
+        android:id="@+id/litersFragment"
+        android:name="anless.fleetmanagement.car_module.presentation.ui.liters.LitresFragment"
+        android:label="@string/refill_fuel"
+        tools:layout="@layout/fragment_litres" />
+
+    <fragment
+        android:id="@+id/sendActionFragment"
+        android:name="anless.fleetmanagement.car_module.presentation.ui.send_action.SendActionFragment"
+        android:label="SendActionFragment"
+        tools:layout="@layout/fragment_send_action">
+
+        <action
+            android:id="@+id/action_sendActionFragment_to_searchCarFragment"
+            app:destination="@id/searchCarFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/searchCarFragment"
+            app:popUpToInclusive="true"
+            app:popUpToSaveState="false" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/fuelAndCleanFragment"
+        android:name="anless.fleetmanagement.car_module.presentation.ui.fuel_and_clean.FuelAndCleanFragment"
+        android:label="FuelAndCleanFragment"
+        tools:layout="@layout/fragment_fuel_and_clean" />
+
+    <fragment
+        android:id="@+id/priceFragment"
+        android:name="anless.fleetmanagement.car_module.presentation.ui.price.PriceFragment"
+        android:label="PriceFragment"
+        tools:layout="@layout/fragment_price" />
+
+    <fragment
+        android:id="@+id/washingFragment"
+        android:name="anless.fleetmanagement.car_module.presentation.ui.washing.WashingFragment"
+        android:label="@string/washing"
+        tools:layout="@layout/fragment_washing" />
+    <fragment
+        android:id="@+id/reservationFragment"
+        android:name="anless.fleetmanagement.car_module.presentation.ui.reservation.ReservationFragment"
+        android:label="ReservationFragment"
+        tools:layout="@layout/fragment_reservation" />
+
+    <fragment
+        android:id="@+id/actFragment"
+        android:name="anless.fleetmanagement.car_module.presentation.ui.act_photo.ActPhotoFragment"
+        android:label="ActFragment"
+        tools:layout="@layout/fragment_act_photo" />
+
+    <fragment
+        android:id="@+id/mileageFragment"
+        android:name="anless.fleetmanagement.car_module.presentation.ui.mileage.MileageFragment"
+        android:label="MileageFragment"
+        tools:layout="@layout/fragment_mileage" />
+    <fragment
+        android:id="@+id/monitoringFragment"
+        android:name="anless.fleetmanagement.car_module.presentation.ui.monitoring.MonitoringFragment"
+        android:label="@string/monitoring"
+        tools:layout="@layout/fragment_monitoring" />
+
+    <fragment
+        android:id="@+id/maintenanceFragment"
+        android:name="anless.fleetmanagement.car_module.presentation.ui.maitenance.MaintenanceFragment"
+        android:label="@string/start_maintenance"
+        tools:layout="@layout/fragment_maintenance" />
+
+    <fragment
+        android:id="@+id/invoiceFragment"
+        android:name="anless.fleetmanagement.car_module.presentation.ui.invoice.InvoiceFragment"
+        android:label="@string/end_maintenance"
+        tools:layout="@layout/fragment_invoice" />
+
+    <fragment
+        android:id="@+id/overpriceFragment"
+        android:name="anless.fleetmanagement.car_module.presentation.ui.overprice.OverpricesFragment"
+        android:label="@string/drop_off"
+        tools:layout="@layout/fragment_overprices" />
+
+    <fragment
+        android:id="@+id/extrasFragment"
+        android:name="anless.fleetmanagement.car_module.presentation.ui.optional_equipment.OptionalEquipmentFragment"
+        android:label="@string/pick_up"
+        tools:layout="@layout/fragment_optional_equipment" />
+
+    <fragment
+        android:id="@+id/dropOffPlaceFragment"
+        android:name="anless.fleetmanagement.car_module.presentation.ui.drop_off_place.DropOffPlaceFragment"
+        android:label="@string/drop_off"
+        tools:layout="@layout/fragment_drop_off_place" />
+
+    <fragment
+        android:id="@+id/contractorFragment"
+        android:name="anless.fleetmanagement.car_module.presentation.ui.contractor.ContractorFragment"
+        android:label="@string/pick_up"
+        tools:layout="@layout/fragment_contractor" />
+
+    <fragment
+        android:id="@+id/commentFragment"
+        android:name="anless.fleetmanagement.car_module.presentation.ui.comment.CommentFragment"
+        android:label="CommentFragment"
+        tools:layout="@layout/fragment_comment" />
+
+    <fragment
+        android:id="@+id/sureCarFragment"
+        android:name="anless.fleetmanagement.car_module.presentation.ui.sureCar.SureCarFragment"
+        android:label="CommentFragment"
+        tools:layout="@layout/fragment_sure_drop_extrad_car" />
+
+    <action
+        android:id="@+id/action_global_sureCarFragment"
+        app:destination="@id/sureCarFragment"
+        app:launchSingleTop="true"/>
+
+    <action
+        android:id="@+id/action_global_relocationsFragment"
+        app:destination="@id/relocationsFragment"
+        app:launchSingleTop="true"
+        app:popUpTo="@id/searchCarFragment"
+        app:popUpToInclusive="true"/>
+
+    <action
+        android:id="@+id/action_global_carDetailsFragment"
+        app:destination="@id/carDetailsFragment"
+        app:launchSingleTop="true"/>
+
+    <action
+        android:id="@+id/action_global_mileageFragment"
+        app:destination="@id/mileageFragment"
+        app:launchSingleTop="true"/>
+
+    <action
+        android:id="@+id/action_global_dropOffPlaceFragment"
+        app:destination="@id/dropOffPlaceFragment"
+        app:launchSingleTop="true"/>
+
+    <action
+        android:id="@+id/action_global_searchCarFragment"
+        app:launchSingleTop="true"
+        app:popUpTo="@id/searchCarFragment"
+        app:popUpToInclusive="true"
+        app:popUpToSaveState="false"
+        app:destination="@id/searchCarFragment"/>
+
+
+</navigation>

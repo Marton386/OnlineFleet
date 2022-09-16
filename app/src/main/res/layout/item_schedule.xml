@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/inactive_button_color">
+
+    <TextView
+        android:id="@+id/tv_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/gapMedium"
+        android:layout_marginTop="@dimen/gapMedium"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="20 Jule, 10:00" />
+
+    <TextView
+        android:id="@+id/tv_station_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/gapXSmall"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@id/tv_date"
+        app:layout_constraintTop_toBottomOf="@id/tv_date"
+        tools:text="Moscow, Baumanskaya" />
+
+    <TextView
+        android:id="@+id/tv_action"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/gapMedium"
+        android:textAllCaps="true"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/tv_date"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tv_date"
+        tools:text="@string/pick_up" />
+
+    <TextView
+        android:id="@+id/tv_reservation_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/gapLarge"
+        android:text="@string/reservation"
+        android:textColor="?attr/text_extra_color"
+        android:textSize="11sp"
+        app:layout_constraintStart_toStartOf="@id/tv_date"
+        app:layout_constraintTop_toBottomOf="@id/tv_station_title" />
+
+    <TextView
+        android:id="@+id/tv_res_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/gapXSmall"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/tv_date"
+        app:layout_constraintTop_toBottomOf="@id/tv_reservation_title"
+        tools:text="12121212" />
+
+    <TextView
+        android:id="@+id/tv_client"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/gapXSmall"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@id/tv_res_number"
+        app:layout_constraintTop_toBottomOf="@id/tv_res_number"
+        tools:text="Mrs. Smith" />
+
+    <TextView
+        android:id="@+id/tv_source"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/gapMedium"
+        android:textAllCaps="true"
+        android:textColor="?attr/text_extra_color"
+        android:textSize="16sp"
+        app:layout_constraintVertical_bias="1"
+        app:layout_constraintTop_toBottomOf="@id/tv_car_license_plate"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="@dimen/gapMedium"
+        app:layout_constraintEnd_toEndOf="@id/tv_car_title"
+        tools:text="RM-WEB" />
+
+    <TextView
+        android:id="@+id/tv_car_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/gapMedium"
+        android:text="@string/car"
+        app:layout_constraintBaseline_toBaselineOf="@id/tv_reservation_title"
+        android:textColor="?attr/text_extra_color"
+        android:textSize="11sp"
+        app:layout_constraintEnd_toEndOf="@id/tv_action"
+        app:layout_constraintTop_toBottomOf="@id/tv_source" />
+
+    <TextView
+        android:id="@+id/tv_car_model"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/gapXSmall"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@id/tv_car_title"
+        app:layout_constraintTop_toBottomOf="@id/tv_car_title"
+        tools:text="Huyndai Solaris" />
+
+    <TextView
+        android:id="@+id/tv_car_not_assigned"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/gapXSmall"
+        android:text="@string/not_assigned"
+        android:textSize="16sp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@id/tv_car_title"
+        app:layout_constraintTop_toBottomOf="@id/tv_car_title" />
+
+    <TextView
+        android:id="@+id/tv_car_license_plate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/gapXSmall"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/tv_car_title"
+        app:layout_constraintTop_toBottomOf="@id/tv_car_model"
+        tools:text="X000XX000" />
+
+    <TextView
+        android:id="@+id/tv_flight_number_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/gapMedium"
+        android:textColor="?attr/text_extra_color"
+        android:textSize="11sp"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="@id/tv_date"
+        app:layout_constraintTop_toBottomOf="@id/tv_client"
+        android:text="@string/flight_number"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/tv_flight_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/gapXSmall"
+        android:layout_marginBottom="@dimen/gapMedium"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="@id/tv_flight_number_title"
+        app:layout_constraintTop_toBottomOf="@id/tv_flight_number_title"
+        tools:text="SR1331"
+        tools:visibility="visible" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

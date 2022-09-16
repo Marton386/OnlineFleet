@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/gapLarge"
+                android:text="@string/type"
+                android:textColor="?attr/text_extra_color"
+                android:textSize="14sp" />
+
+            <RadioGroup
+                android:id="@+id/rbtn_group_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/gapHalfMedium">
+
+                <RadioButton
+                    android:id="@+id/rbtn_summer_tires"
+                    style="@style/RadioButton"
+                    android:text="@string/summer_tires" />
+
+                <RadioButton
+                    android:id="@+id/rbtn_winter_studded_tires"
+                    style="@style/RadioButton"
+
+                    android:text="@string/winter_studded_tires" />
+
+                <RadioButton
+                    android:id="@+id/rbtn_winter_studless_tires"
+                    style="@style/RadioButton"
+                    android:text="@string/winter_studless_tires" />
+
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/gapXLarge"
+                android:text="@string/options"
+                android:textColor="?attr/text_extra_color"
+                android:textSize="14sp" />
+
+            <LinearLayout
+                android:id="@+id/layout_tire_options"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/gapMedium"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <NumberPicker
+                    android:id="@+id/nump_width"
+                    android:layout_width="wrap_content"
+                    android:layout_height="140dp"
+                    android:layout_marginEnd="@dimen/gapHalfMedium"
+                    android:theme="@style/NumberPickerText" />
+
+                <TextView
+                    android:id="@+id/tv_divider"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/gapHalfMedium"
+                    android:text="/"
+                    android:textSize="25sp" />
+
+                <NumberPicker
+                    android:id="@+id/nump_profile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="140dp"
+                    android:layout_marginStart="@dimen/gapSmall"
+                    android:theme="@style/NumberPickerText" />
+
+                <TextView
+                    android:id="@+id/tv_diameter_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/gapHalfMedium"
+                    android:text="R"
+                    android:textSize="25sp" />
+
+
+                <NumberPicker
+                    android:id="@+id/nump_diameter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="140dp"
+                    android:layout_marginStart="@dimen/gapHalfMedium"
+                    android:theme="@style/NumberPickerText" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/gapXLarge"
+                android:text="@string/condition"
+                android:textColor="?attr/text_extra_color"
+                android:textSize="14sp" />
+
+            <RadioGroup
+                android:id="@+id/rbtn_group_condition"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/gapHalfMedium">
+
+                <RadioButton
+                    android:id="@+id/rbtn_new"
+                    style="@style/RadioButton"
+                    android:text="@string/condition_new" />
+
+                <RadioButton
+                    android:id="@+id/rbtn_good"
+                    style="@style/RadioButton"
+                    android:text="@string/good" />
+
+                <RadioButton
+                    android:id="@+id/rbtn_one_season"
+                    style="@style/RadioButton"
+                    android:text="@string/for_one_season" />
+
+            </RadioGroup>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_next"
+                style="@style/GreenButtonMargin"
+                android:layout_gravity="bottom"
+                android:layout_marginTop="@dimen/gapXLarge"
+                android:enabled="false"
+                android:text="@string/next" />
+
+        </LinearLayout>
+
+<!--        <ProgressBar
+            android:id="@+id/progress_bar"
+            style="@style/ProgressBar"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="visible" />-->
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_refresh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:animateLayoutChanges="true"
+            android:layout_marginStart="@dimen/gapMedium"
+            android:layout_marginTop="@dimen/gapLarge">
+
+            <TextView
+                android:id="@+id/tv_checking_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:text="@string/checking_instaled_tires" />
+
+            <ImageView
+                android:id="@+id/img_refresh"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                app:layout_constraintStart_toEndOf="@id/tv_checking_info"
+                app:layout_constraintTop_toTopOf="@id/tv_checking_info"
+                app:layout_constraintBottom_toBottomOf="@id/tv_checking_info"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:tint="?attr/text_primary_color"
+                android:visibility="invisible"
+                android:layout_marginStart="@dimen/gapSmall"
+                android:src="@drawable/ic_refresh"/>
+
+            <ProgressBar
+                android:layout_width="22dp"
+                android:id="@+id/progress_bar"
+                app:layout_constraintStart_toStartOf="@id/img_refresh"
+                app:layout_constraintEnd_toEndOf="@id/img_refresh"
+                android:visibility="invisible"
+                app:layout_constraintBaseline_toTopOf="@id/img_refresh"
+                app:layout_constraintBottom_toBottomOf="@id/img_refresh"
+                android:layout_height="22dp"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

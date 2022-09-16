@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:overScrollMode="never"
+        android:layout_height="0dp">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:id="@+id/layout_params"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:layout_marginBottom="@dimen/gapXLarge">
+
+            <TextView
+                android:id="@+id/tv_type_works_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/gapLarge"
+                android:text="@string/type_maintenance_works"
+                android:textColor="?attr/text_extra_color"
+                android:textSize="14sp" />
+
+            <RadioGroup
+                android:id="@+id/rbtn_group_type_maintenance"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/gapHalfMedium">
+
+                <RadioButton
+                    android:id="@+id/rbtn_body_works"
+                    style="@style/RadioButton"
+                    android:text="@string/body_works" />
+
+                <RadioButton
+                    android:id="@+id/rbtn_locksmith_works"
+                    style="@style/RadioButton"
+                    android:text="@string/locksmith_works" />
+
+                <RadioButton
+                    android:id="@+id/rbtn_maintenance"
+                    style="@style/RadioButton"
+                    android:text="@string/maintenance" />
+
+            </RadioGroup>
+
+            <LinearLayout
+                android:id="@+id/layout_maintenance"
+                android:layout_width="match_parent"
+                tools:visibility="visible"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/gapHalfXLarge"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/tv_type_maintenance_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/type_maintenance"
+                    android:textColor="?attr/text_extra_color"
+                    android:layout_marginBottom="@dimen/gapSmall"
+                    android:textSize="14sp" />
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:id="@+id/layout_maintenance_items"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/gapSmall" />
+
+            </LinearLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout_add_photos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/gapLarge"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/tv_add_photos_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/add_photos_if_need"
+                    android:textColor="?attr/text_extra_color"
+                    android:gravity="center_horizontal"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <LinearLayout
+                    android:id="@+id/layout_open_camera"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/gapLarge"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:layout_marginStart="@dimen/gapMedium"
+                    app:layout_constraintEnd_toStartOf="@id/layout_open_gallery"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_add_photos_title">
+
+                    <ImageView
+                        android:layout_width="45dp"
+                        android:layout_height="wrap_content"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/ic_photo_camera"
+                        app:tint="?attr/text_primary_color" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tap_to_open_camera"
+                        android:textColor="?attr/text_extra_color"
+                        android:gravity="center_horizontal"
+                        android:textSize="11sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layout_open_gallery"
+                    android:layout_width="0dp"
+                    android:layout_marginEnd="@dimen/gapMedium"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/layout_open_camera"
+                    app:layout_constraintTop_toTopOf="@id/layout_open_camera">
+
+                    <ImageView
+                        android:layout_width="45dp"
+                        android:layout_height="wrap_content"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/ic_image"
+                        app:tint="?attr/text_primary_color" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tap_to_open_gallery"
+                        android:gravity="center_horizontal"
+                        android:textColor="?attr/text_extra_color"
+                        android:textSize="11sp" />
+
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/tv_max_amount_photos_was_added"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/maximum_photos_amount_was_added"
+                android:textColor="?attr/text_extra_color"
+                android:gravity="center_horizontal"
+                android:textSize="14sp"
+                android:visibility="gone"/>
+
+            <LinearLayout
+                android:id="@+id/layout_loaded_photos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                tools:visibility="visible"
+                android:orientation="vertical"
+                android:visibility="gone"
+                android:layout_marginBottom="@dimen/gapMedium"
+                android:layout_marginTop="@dimen/gapLarge">
+
+                <TextView
+                    android:id="@+id/tv_loaded_photos"
+                    style="@style/EditTextTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/gapLarge"
+                    android:text="@string/loaded_photos" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_photos"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="@dimen/gapSmall"
+                    android:layout_height="wrap_content"
+                    android:overScrollMode="never"
+                    tools:listitem="@layout/item_photo" />
+
+                <TextView
+                    android:id="@+id/tv_hint_for_delete"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/to_remove_tap_to_photo"
+                    android:textColor="?attr/text_extra_color"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="11sp"
+                    android:layout_marginTop="@dimen/gapMedium" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_next"
+        style="@style/GreenButtonMargin"
+        android:enabled="false"
+        android:text="@string/next"
+        android:layout_marginTop="@dimen/gapLarge"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</LinearLayout>

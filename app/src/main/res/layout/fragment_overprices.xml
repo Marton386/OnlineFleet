@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_overprices"
+        android:layout_width="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="gone"
+        tools:visibility="visible"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_overprices_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="@dimen/gapLarge"
+            android:layout_marginStart="@dimen/gapMedium"
+            android:textSize="14sp"
+            android:textColor="?attr/text_extra_color"
+            android:text="@string/excesses"/>
+
+        <TextView
+            android:id="@+id/tv_mileage_excess_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/tv_overprices_title"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="@dimen/gapMedium"
+            android:layout_marginStart="@dimen/gapMedium"
+            android:textSize="16sp"
+            android:text="@string/excess_mileage"/>
+
+        <TextView
+            android:id="@+id/tv_mileage_excess"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_mileage_excess_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="@dimen/gapLarge"
+            android:layout_marginEnd="@dimen/gapMedium"
+            android:textSize="16sp"
+            tools:text="124 km"/>
+
+        <TextView
+            android:id="@+id/tv_need_carwash_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/tv_mileage_excess_title"
+            app:layout_constraintStart_toStartOf="@id/tv_mileage_excess_title"
+            android:layout_marginTop="@dimen/gapMedium"
+            android:textSize="16sp"
+            android:text="@string/need_a_carwash"/>
+
+        <TextView
+            android:id="@+id/tv_need_carwash"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_need_carwash_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="@dimen/gapLarge"
+            android:layout_marginEnd="@dimen/gapMedium"
+            android:textSize="16sp"
+            tools:text="@string/yes"/>
+
+        <TextView
+            android:id="@+id/tv_fuel_pay_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/tv_need_carwash_title"
+            app:layout_constraintStart_toStartOf="@id/tv_mileage_excess_title"
+            android:layout_marginTop="@dimen/gapMedium"
+            android:textSize="16sp"
+            android:text="@string/not_enough_fuel"/>
+
+        <TextView
+            android:id="@+id/tv_fuel_pay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_fuel_pay_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="@dimen/gapLarge"
+            android:layout_marginEnd="@dimen/gapMedium"
+            android:textSize="16sp"
+            tools:text="@string/yes"/>
+
+        <TextView
+            android:id="@+id/tv_cost_fines_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/tv_fuel_pay_title"
+            app:layout_constraintStart_toStartOf="@id/tv_mileage_excess_title"
+            android:layout_marginTop="@dimen/gapMedium"
+            android:textSize="16sp"
+            android:text="@string/cost_of_fines"/>
+
+        <TextView
+            android:id="@+id/tv_cost_fines"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_cost_fines_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="@dimen/gapLarge"
+            android:layout_marginEnd="@dimen/gapMedium"
+            android:textSize="16sp"
+            tools:text="@string/yes"/>
+
+        <TextView
+            android:id="@+id/tv_remember_take_pay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/tv_cost_fines_title"
+            app:layout_constraintStart_toStartOf="@id/tv_mileage_excess_title"
+            android:layout_marginTop="@dimen/gapXLarge"
+            android:textSize="16sp"
+            android:visibility="gone"
+            tools:visibility="visible"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="@dimen/gapMedium"
+            android:text="@string/remember_to_charge_extra"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/tv_checking_excesses"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="@dimen/gapLarge"
+        android:layout_marginStart="@dimen/gapMedium"
+        android:textSize="16sp"
+        android:text="@string/checking_for_excesses"/>
+
+    <ImageView
+        android:id="@+id/img_refresh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        app:layout_constraintStart_toEndOf="@id/tv_checking_excesses"
+        app:layout_constraintTop_toTopOf="@id/tv_checking_excesses"
+        app:layout_constraintBottom_toBottomOf="@id/tv_checking_excesses"
+        app:tint="?attr/text_primary_color"
+        android:visibility="invisible"
+        tools:visibility="visible"
+        android:layout_marginStart="@dimen/gapSmall"
+        android:src="@drawable/ic_refresh"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_next"
+        style="@style/GreenButtonMargin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="@dimen/gapXLarge"
+        android:text="@string/next" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

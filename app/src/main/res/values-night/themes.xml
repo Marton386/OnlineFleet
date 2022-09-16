@@ -1,0 +1,41 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.OnlineFleet" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/green</item>
+        <item name="colorPrimaryVariant">@color/green</item>
+        <item name="colorOnPrimary">@color/black</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/gray_middle_dark</item>
+        <item name="colorSecondaryVariant">@color/teal_200</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/background_extra_color</item>
+        <!-- Customize your theme here. -->
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="colorSurface">@color/gray_extra_dark</item>
+        <item name="android:colorBackground">@color/black</item>
+        <item name="colorOnBackground">@color/gray_dark</item>
+        <item name="colorControlNormal">@color/gray_light</item>
+        <item name="colorControlActivated">@color/green</item>
+        <item name="android:textColorPrimary">@color/white</item>
+        <item name="android:textColorSecondary">@color/gray_light</item>
+        <item name="errorTextColor">@color/red</item>
+
+        <item name="inactive_button_color">@color/gray_middle_dark</item>
+        <item name="button_primary_color">@color/green</item>
+        <item name="button_dark_color">@color/green_dark</item>
+        <item name="placeholder_color">@color/gray_dark</item>
+        <item name="text_primary_color">@color/white</item>
+        <item name="text_extra_light_color">@color/gray_extra_light</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="background_primary_color">@color/black</item>
+        <item name="background_extra_color">@color/gray_dark</item>
+        <item name="background_extra_light_color">@color/gray_dark</item>
+        <item name="background_extra_dark_color">@color/gray_extra_dark</item>
+        <item name="background_shadow_color">@color/gray_extra_dark</item>
+        <item name="icon_color">@color/green</item>
+        <item name="text_extra_color">@color/gray</item>
+        <item name="text_link_color">@color/color_link</item>
+    </style>
+</resources>
