@@ -52,7 +52,7 @@ class MileageFragment : Fragment(R.layout.fragment_mileage) {
 
         binding.btnNext.setOnClickListener {
             if (mileageViewModel.isMileageCorrect()) {
-                if (mileageViewModel.getMileage() != carActionViewModel.reservationNumber?.toInt()) {
+                if (mileageViewModel.getMileage().toString() != carActionViewModel.reservationNumber) {
                     binding.layoutMileage.error = null
                     mileageViewModel.getMileage()?.let { mileage ->
                         carActionViewModel.setMileage(mileage)

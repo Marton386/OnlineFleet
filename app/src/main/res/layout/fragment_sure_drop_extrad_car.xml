@@ -70,7 +70,7 @@
         android:layout_marginStart="@dimen/gapMedium"
         android:textSize="18sp"
         android:textStyle="bold"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="30dp"
         android:text="@string/client"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_title_number"/>
@@ -81,7 +81,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/gapXSmall"
         android:textSize="18sp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="30dp"
         android:text="Tesla Model X"
         app:layout_constraintStart_toEndOf="@+id/tv_title_client"
         app:layout_constraintTop_toBottomOf="@+id/tv_car_license_plate" />
@@ -115,14 +115,16 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/gapMedium"
         android:layout_marginEnd="@dimen/gapMedium"
-        android:layout_marginBottom="@dimen/gapLarge"
-        android:textColor="?attr/errorTextColor"
+        android:layout_marginBottom="@dimen/gapSmall"
         android:text="@string/sure_data"
         android:textAlignment="center"
+        android:textColor="?attr/errorTextColor"
+        android:layout_marginTop="@dimen/gapSmall"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/btn_ok"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_agreement" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_ok"
