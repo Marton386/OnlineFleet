@@ -7,6 +7,7 @@ object ActionManager {
     object ActionType {
         const val UNKNOWN = 0
         const val PICKUP = 1
+        const val PICKUP_WITHOUT_RES = -1
         const val DROP_OFF = 2
         const val DECOMMISSIONING = 3
         const val COMMISSIONING = 4

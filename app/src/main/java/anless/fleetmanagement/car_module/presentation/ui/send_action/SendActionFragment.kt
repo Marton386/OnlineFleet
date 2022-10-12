@@ -1,7 +1,6 @@
 package anless.fleetmanagement.car_module.presentation.ui.send_action
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.activity.addCallback
 import androidx.fragment.app.Fragment
@@ -89,7 +88,24 @@ class SendActionFragment : Fragment(R.layout.fragment_send_action) {
                     }
                     is CarActionViewModel.CarActionState.Error -> {
                         setLoadingState(false)
-                        val errorMessage = getString(state.errorRes)
+                        var errorMessage = getString(state.errorRes)
+                        if (state.errorRes == R.string.not_enough_parameters) {
+                            errorMessage += "\nНедостающие параметры:"
+                            if (carActionViewModel.getAction() == null)
+                                errorMessage += " действие == null;"
+                            if (carActionViewModel.getIdCar() == null)
+                                errorMessage += " id авто == null;"
+                            if (carActionViewModel.getIdStationOpenedShift() == null)
+                                errorMessage += " id станции == null;"
+                            if (carActionViewModel.getMileage() == null)
+                                errorMessage += " пробег == null;"
+                            if (carActionViewModel.getFuel() == null)
+                                errorMessage += " топливо == null;"
+                            if (carActionViewModel.getCleanState() == null)
+                                errorMessage += " чистота == null;"
+                            if (carActionViewModel.getFilenamePhotoAct() == null)
+                                errorMessage += " имя фото равно == null;"
+                        }
                         binding.tvSendingInfo.text = errorMessage
                         binding.imgRefresh.visibility = View.VISIBLE
                         binding.btnDone.isEnabled = false
@@ -101,7 +117,6 @@ class SendActionFragment : Fragment(R.layout.fragment_send_action) {
 
         viewLifecycleOwner.lifecycleScope.launchWhenStarted {
             carActionViewModel.extraAction.collectLatest { extraAction ->
-                Log.d(TAG, "Extra action is available: ${extraAction != null}")
                 setButtonExtraAction(extraAction)
             }
         }
@@ -129,25 +144,19 @@ class SendActionFragment : Fragment(R.layout.fragment_send_action) {
             binding.btnExtraAction.text = getString(
                 ActionManager.getTitleResString(extraAction)
             )
-
-            Log.d(TAG, "Extra button text updated")
-
             binding.btnExtraAction.visibility = View.VISIBLE
 
             binding.btnExtraAction.setOnClickListener {
                 carActionViewModel.selectExtraAction()
             }
-            Log.d(TAG, "Extra button updated")
         } else {
             binding.btnExtraAction.visibility = View.GONE
             binding.btnExtraAction.text = ""
-            Log.d(TAG, "Extra button is hidden")
         }
     }
 
     private fun clearScreens() {
         carActionViewModel.clearAll()
-        //findNavController().popBackStack(R.id.searchCarFragment, inclusive = false, saveState = false)
     }
 
     override fun onResume() {

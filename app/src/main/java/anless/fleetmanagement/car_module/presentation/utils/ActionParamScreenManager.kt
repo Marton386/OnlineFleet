@@ -56,6 +56,7 @@ object ActionParamScreenManager {
     fun getActionScreens(actionStatus: Int): List<OptionScreen>? =
         when (actionStatus) {
             ActionManager.ActionType.PICKUP -> pickup()
+            ActionManager.ActionType.PICKUP_WITHOUT_RES -> pickupWithoutResNumb()
             ActionManager.ActionType.DROP_OFF -> dropOff()
             ActionManager.ActionType.DECOMMISSIONING -> decommissioning()
             ActionManager.ActionType.COMMISSIONING -> commissioning()
@@ -85,7 +86,13 @@ object ActionParamScreenManager {
 
     private fun pickup() = listOf(
         OptionScreen.RESERVATION_NUMBER,
-        //OptionScreen.EXTRAS,
+        OptionScreen.MILEAGE,
+        OptionScreen.FUEL_AND_CLEAN,
+        OptionScreen.ACT,
+        OptionScreen.SEND_ACTION
+    )
+
+    private fun pickupWithoutResNumb() = listOf(
         OptionScreen.MILEAGE,
         OptionScreen.FUEL_AND_CLEAN,
         OptionScreen.ACT,

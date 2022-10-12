@@ -115,7 +115,7 @@ class QrFragment : Fragment(R.layout.fragment_qr_code), EasyPermissions.Permissi
             reservationViewModel.reservation.collect { reservation ->
                 carActionViewModel.setReservation(reservation)
                 if (qrViewModel.contract.value!!.status.toInt() == 1 || qrViewModel.contract.value!!.status.toInt() == 3) {
-                    carActionViewModel.setScreensList(1)
+                    carActionViewModel.setScreensList(-1)
                     (activity as MainActivity).openSureDrop()
                 } else {
                     showErrorDialog(getString(R.string.close_contract))

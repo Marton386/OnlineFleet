@@ -177,7 +177,10 @@ class CarActionViewModel @Inject constructor(
     }
 
     fun setScreensList(idStatus: Int) {
-        action = idStatus
+        action = if (idStatus == -1)
+            1
+        else
+            idStatus
         screensList = getNewActionScreens(idStatus)
     }
 
@@ -355,7 +358,6 @@ class CarActionViewModel @Inject constructor(
 
     fun clearAll() {
         if (_idCar.value != null) {
-            Log.i(TAG, "clear data")
             clearAction()
             clearExtraAction()
             clearParams()
@@ -443,6 +445,36 @@ class CarActionViewModel @Inject constructor(
         }
     }
 
+    ///////////////////////////
+    //Для проверки того, почему не всегда отправляются данные через QR-код
+    fun getAction(): Int? {
+        return action;
+    }
+    fun getIdCar(): Int? {
+        return _idCar.value
+    }
+
+    fun getIdStationOpenedShift(): Int? {
+        return idStationOpenedShift
+    }
+
+    fun getMileage(): Int? {
+        return mileage
+    }
+
+    fun getFuel(): Int? {
+        return fuel
+    }
+
+    fun getCleanState(): Int? {
+        return cleanState
+    }
+
+    fun getFilenamePhotoAct(): String? {
+        return filenamePhotoAct
+    }
+    ///////////////////////////
+
     private fun checkParamsReady(): Boolean {
         return when (action) {
             ActionManager.ActionType.PICKUP -> {
@@ -505,7 +537,6 @@ class CarActionViewModel @Inject constructor(
     private fun pickup() {
         viewModelScope.launch(Dispatchers.IO) {
             _state.value = CarActionState.Loading
-
             val result = actionUseCases.pickUpUseCases(
                 Action.Pickup(
                     reservation = reservation ?: return@launch,
@@ -536,7 +567,6 @@ class CarActionViewModel @Inject constructor(
     private fun dropOff() {
         viewModelScope.launch(Dispatchers.IO) {
             _state.value = CarActionState.Loading
-
             val result = actionUseCases.dropOffUseCase(
                 Action.DropOff(
                     idCar = _idCar.value ?: return@launch,
