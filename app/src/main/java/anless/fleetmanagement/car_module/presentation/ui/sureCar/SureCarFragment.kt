@@ -10,11 +10,13 @@ import anless.fleetmanagement.car_module.presentation.ui.CarActionViewModel
 import anless.fleetmanagement.car_module.presentation.ui.car_details.CarDetailsViewModel
 import anless.fleetmanagement.car_module.presentation.ui.qr.QrViewModel
 import anless.fleetmanagement.core.app.presentation.ui.MainActivity
+import anless.fleetmanagement.core.app.presentation.ui.MainViewModel
 import anless.fleetmanagement.core.app.presentation.utils.showErrorDialog
 import anless.fleetmanagement.databinding.FragmentSureDropExtradCarBinding
 import kotlinx.coroutines.flow.collectLatest
 
 class SureCarFragment : Fragment(R.layout.fragment_sure_drop_extrad_car) {
+    private val mainViewModel: MainViewModel by activityViewModels()
     private val carActionViewModel: CarActionViewModel by activityViewModels()
     private val carDetailsViewModel: CarDetailsViewModel by activityViewModels()
     private val qrViewModel: QrViewModel by activityViewModels()
@@ -31,6 +33,10 @@ class SureCarFragment : Fragment(R.layout.fragment_sure_drop_extrad_car) {
     }
 
     private fun subscribeUi() {
+        mainViewModel.getShift()?.let { shift ->
+            carActionViewModel.setIdStationOpenedShift(shift.station.id)
+        }
+
         viewLifecycleOwner.lifecycleScope.launchWhenStarted {
             qrViewModel.contract.collectLatest { contract ->
                 if (contract != null) {

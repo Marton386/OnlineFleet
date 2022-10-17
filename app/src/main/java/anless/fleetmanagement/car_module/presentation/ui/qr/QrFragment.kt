@@ -79,9 +79,6 @@ class QrFragment : Fragment(R.layout.fragment_qr_code), EasyPermissions.Permissi
             qrViewModel.contract.collectLatest { contract ->
                 if (contract != null) {
                     if (contract.status.toInt() != 0) {
-                        mainViewModel.getShift()?.let { shift ->
-                            carActionViewModel.setIdStationOpenedShift(shift.station.id)
-                        }
                         carActionViewModel.setCarId(contract.vehicleID.toInt())
                         reservationViewModel.setIdCar(contract.vehicleID.toInt())
                         reservationViewModel.setResNumber(contract.refid)
