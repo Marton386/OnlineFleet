@@ -56,7 +56,7 @@ class SureCarFragment : Fragment(R.layout.fragment_sure_drop_extrad_car) {
                         (activity as MainActivity).setSubTitle(null)
                         binding.tvTitle.text = getString(R.string.drop_off_car)
                         binding.btnOk.setOnClickListener {
-                            (activity as MainActivity).openDropOffPlace()
+                            (activity as MainActivity).openMileage()
                         }
                     }
 

@@ -100,7 +100,7 @@ object ActionParamScreenManager {
     )
 
     private fun dropOff() = listOf(
-        OptionScreen.DROP_OFF_PLACE,
+        //OptionScreen.DROP_OFF_PLACE,
         OptionScreen.MILEAGE,
         OptionScreen.FUEL_AND_CLEAN,
         OptionScreen.CHECK_OVERPRICES,
